@@ -7,3 +7,9 @@ class PostSerializer(serializers.ModelSerializer):
         model= Post
         fields= '__all__'
         read_only_fields = ['author'] #auther cant be send by users
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Post
+        fields= '__all__'
+        

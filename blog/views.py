@@ -3,10 +3,16 @@ from rest_framework import generics, mixins, viewsets
 from .permissions import IsAuthorOrReadOnly
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import(
-    Post)
+    Post, Category)
 from .serializer import (
-    PostSerializer)
+    PostSerializer,CategorySerializer )
 
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    
 
 #  -----------------------------better way to do this-----------------------
 
@@ -18,6 +24,7 @@ class PostViewSet(viewsets.ModelViewSet):
         IsAuthenticatedOrReadOnly,
         IsAuthorOrReadOnly
     ]
+
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)

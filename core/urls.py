@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/blog/', include('blog.urls')),
     path('api/user/', include('user.urls')),
+    path("api-auth/", include("rest_framework.urls")),
     path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     

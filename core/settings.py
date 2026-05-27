@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'blog',
     'user',
     'rest_framework',
-    'ckeditor',
-    'ckeditor_uploader',
+    'django_ckeditor_5',
+    
     
    
 ]
@@ -144,4 +144,23 @@ REST_FRAMEWORK = {
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
+
+# bcz i am extending ckeditor 5 features
+CKEDITOR_5_CONFIGS = {
+    'extends': {
+        'toolbar': [
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'imageUpload',
+            'blockQuote',
+            'undo',
+            'redo',
+        ],
+    }
+}

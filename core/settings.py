@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'blog',
     'user',
     'rest_framework',
+    'ckeditor',
+    'ckeditor_uploader',
+    
    
 ]
 
@@ -136,3 +139,9 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
 }
+
+# media configurations
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
